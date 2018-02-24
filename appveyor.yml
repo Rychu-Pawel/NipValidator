@@ -9,10 +9,25 @@ dotnet_csproj:
   assembly_version: '{version}'
   file_version: '{version}'
   informational_version: '{version}'
+environment:
+  NUGET_APIKEY:
+    secure: q2z4v6NMpy/1CLcZ0JzbAVeWp5198vE6jZdzEQFEkJ6zLVL5CmhHbvI9X2Y9vdys
+nuget:
+  account_feed: true
+  project_feed: true
 build_script:
 - ps: dotnet build .\NipValidator.sln -c Release
 test_script:
 - ps: dotnet test .\tests\NipValidatorTests\NipValidatorTests.csproj --logger:trx
+artifacts:
+- path: .\src\NipValidator\bin\Release\Rychusoft.Validators.NipValidator.*.nupkg
+  name: NipValidator_nuget_package
+deploy:
+- provider: NuGet
+  api_key:
+    secure: kqsozkmlyzAEnjrwgpE9tH6uEcIjnW3DG8hbMDWvJf38ahcuuxzK7EN3PJFnJQNMOKWO240sAJwLYVEUlgK0IZDrvtbaJT/XbTVcxlFX3/Q=
+  on:
+    branch: master
 notifications:
 - provider: GitHubPullRequest
   on_build_success: true
