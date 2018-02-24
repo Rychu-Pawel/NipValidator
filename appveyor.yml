@@ -19,7 +19,7 @@ artifacts:
 deploy:
 - provider: NuGet
   api_key:
-    secure: 7DMvyoCVm4Qpa9zGEz5kKn48OKrYvY/RwlRxzTInRdK0Yyy6u7PyrchiQLnplibW
+    secure: zC91fFY1joZMkDXOAgrK/3jppgEntX9lWV8wtQr1Da8hENFmY9emqRqgaBLyGlg3
   artifact: NipValidator_nuget_package
   on:
     branch: master
