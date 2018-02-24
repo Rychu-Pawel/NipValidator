@@ -4,17 +4,11 @@ configuration: Release
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
-  version: '{version}'
-  package_version: '{version}'
-  assembly_version: '{version}'
-  file_version: '{version}'
-  informational_version: '{version}'
-environment:
-  NUGET_APIKEY:
-    secure: q2z4v6NMpy/1CLcZ0JzbAVeWp5198vE6jZdzEQFEkJ6zLVL5CmhHbvI9X2Y9vdys
-nuget:
-  account_feed: true
-  project_feed: true
+  version: $(appveyor_build_version)
+  package_version: $(appveyor_build_version)
+  assembly_version: $(appveyor_build_version)
+  file_version: $(appveyor_build_version)
+  informational_version: $(appveyor_build_version)
 build_script:
 - ps: dotnet build .\NipValidator.sln -c Release
 test_script:
@@ -25,7 +19,8 @@ artifacts:
 deploy:
 - provider: NuGet
   api_key:
-    secure: kqsozkmlyzAEnjrwgpE9tH6uEcIjnW3DG8hbMDWvJf38ahcuuxzK7EN3PJFnJQNMOKWO240sAJwLYVEUlgK0IZDrvtbaJT/XbTVcxlFX3/Q=
+    secure: 7DMvyoCVm4Qpa9zGEz5kKn48OKrYvY/RwlRxzTInRdK0Yyy6u7PyrchiQLnplibW
+  artifact: NipValidator_nuget_package
   on:
     branch: master
 notifications:
