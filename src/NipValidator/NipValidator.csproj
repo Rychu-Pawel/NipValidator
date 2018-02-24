@@ -1,7 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>netstandard1.3</TargetFramework>
+    <Title>Polish NIP numbers validator</Title>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>Rychusoft.Validators.NipValidator</PackageId>
+    <Authors>Rychusoft</Authors>
+    <Company>Rychusoft</Company>
+    <Description>Easy to use library for validating Polish NIP numbers:
+
+string nip = "8674068337";
+bool isValid = Rychusoft.Validators.NipValidator.IsValid(nip);</Description>
+    <Copyright>© Pawel Rychlicki 2018</Copyright>
+    <PackageLicenseUrl>https://github.com/Rychu-Pawel/NipValidator/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/Rychu-Pawel/NipValidator</PackageProjectUrl>
+    <PackageIconUrl>http://pawelrychlicki.pl/favicon.ico</PackageIconUrl>
+    <RepositoryUrl>https://github.com/Rychu-Pawel/NipValidator</RepositoryUrl>
+    <PackageTags>NIP validate validator check</PackageTags>
+    <PackageReleaseNotes>-</PackageReleaseNotes>
   </PropertyGroup>
 
 </Project>
