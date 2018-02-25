@@ -11,8 +11,10 @@ dotnet_csproj:
   informational_version: $(appveyor_build_version)
 init:
 - ps: Write-Host "Is it working?"
-- ps: Write-Host $MyInvocation.InvocationName
-- ps: Write-Host $PSScriptRoot
+- ps: Write-Host "$MyInvocation.InvocationName"
+- ps: Write-Host "$PSScriptRoot"
+- ps: Write-Host "$MyInvocation.InvocationName: " $MyInvocation.InvocationName
+- ps: Write-Host "$PSScriptRoot: " $PSScriptRoot
 - ps: Write-Host $MyInvocation.MyCommand.Definition
 - ps: Write-Host split-path -parent $MyInvocation.MyCommand.Definition
 - ps: Write-Host (split-path -parent $MyInvocation.MyCommand.Definition) + "\scipts\AppVeyor\init.ps1"
