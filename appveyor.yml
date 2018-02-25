@@ -1,6 +1,9 @@
 version: 1.0.{build}
 image: Visual Studio 2017
 configuration: Release
+environment:
+  SONAR_APIKEY:
+    secure: DUCuBgLmhR6jEJEm0n480wMqRFLsCLfhucK9zqPzbxmWg6Dxl9IS3rehXprs8jTn
 dotnet_csproj:
   patch: true
   file: '**\*.csproj'
@@ -9,10 +12,19 @@ dotnet_csproj:
   assembly_version: $(appveyor_build_version)
   file_version: $(appveyor_build_version)
   informational_version: $(appveyor_build_version)
+init:
+- ps: choco install "msbuild-sonarqube-runner" -y
+- ps: Get-ChildItem -Recurse
+install:
+- ps: dotnet restore .\NipValidator.sln
+before_build:
+- ps: .\tools\sonar-scanner-msbuild\SonarQube.Scanner.MSBuild.exe begin /d:sonar.organization="rychu-pawel-github" /k:NipValidator /d:sonar.login=$env:SONAR_APIKEY /d:sonar.host.url="https://sonarcloud.io" /d:sonar.cs.vstest.reportsPaths="**/*.trx"
 build_script:
 - ps: dotnet build .\NipValidator.sln -c Release
 test_script:
 - ps: dotnet test .\tests\NipValidatorTests\NipValidatorTests.csproj --logger:trx
+after_test:
+- ps: .\tools\sonar-scanner-msbuild\SonarQube.Scanner.MSBuild.exe end /d:sonar.login=$env:SONAR_APIKEY
 artifacts:
 - path: .\src\NipValidator\bin\Release\Rychusoft.Validators.NipValidator.*.nupkg
   name: NipValidator_nuget_package
