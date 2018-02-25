@@ -11,6 +11,7 @@ dotnet_csproj:
   informational_version: $(appveyor_build_version)
 init:
 - ps: Write-Host "Is it working?"
+- ps: Write-Host $env:APPVEYOR_BUILD_FOLDER
 - ps: Write-Host "$MyInvocation.InvocationName"
 - ps: Write-Host "$PSScriptRoot"
 - ps: Write-Host "MyInvocation.InvocationName = " $MyInvocation.InvocationName
