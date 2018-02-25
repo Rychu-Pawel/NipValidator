@@ -11,6 +11,12 @@ dotnet_csproj:
   informational_version: $(appveyor_build_version)
 init:
 - ps: echo $MyInvocation.InvocationName
+- ps: echo $PSScriptRoot
+- ps: echo $MyInvocation.MyCommand.Definition
+- ps: echo split-path -parent $MyInvocation.MyCommand.Definition
+- ps: echo (split-path -parent $MyInvocation.MyCommand.Definition) + "\scipts\AppVeyor\init.ps1"
+- ps: echo ($PSScriptRoot) + "\scipts\AppVeyor\init.ps1"
+- ps: echo $PSScriptRoot + "\scipts\AppVeyor\init.ps1"
 - ps: '& ((Split-Path $MyInvocation.InvocationName) + "\scipts\AppVeyor\init.ps1")'
 install:
 - ps: '& "scripts\AppVeyor\install.ps1"'
