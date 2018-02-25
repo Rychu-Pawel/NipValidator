@@ -10,7 +10,7 @@ dotnet_csproj:
   file_version: $(appveyor_build_version)
   informational_version: $(appveyor_build_version)
 init:
-- ps: '& .\scripts\AppVeyor\init.ps1'
+- ps: '& ((Split-Path $MyInvocation.InvocationName) + "\scipts\AppVeyor\init.ps1")'
 install:
 - ps: '& "scripts\AppVeyor\install.ps1"'
 before_build:
