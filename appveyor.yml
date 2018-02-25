@@ -16,7 +16,6 @@ dotnet_csproj:
   informational_version: $(appveyor_build_version)
 init:
 - ps: choco install "msbuild-sonarqube-runner" -y
-- ps: Write-Host Get-ChildItem -Recurse
 install:
 - ps: dotnet restore .\NipValidator.sln
 before_build:
