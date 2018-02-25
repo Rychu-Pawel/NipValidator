@@ -3,14 +3,12 @@ using System.Linq;
 
 namespace Rychusoft.Validators
 {
-    public class NipValidator
+    public static class NipValidator
     {
         private static int[] weights = { 6, 5, 7, 2, 3, 4, 5, 6, 7, 0 };
 
         public static bool IsValid(string nip)
         {
-            var sonarQubeTrap = 0;
-
             if (IsEmptyOrNotProperLength(nip))
                 return false;
 
