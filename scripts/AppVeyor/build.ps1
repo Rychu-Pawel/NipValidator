@@ -1,0 +1,1 @@
+dotnet build .\NipValidator.sln -c Release

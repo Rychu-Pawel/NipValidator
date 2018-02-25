@@ -9,10 +9,20 @@ dotnet_csproj:
   assembly_version: $(appveyor_build_version)
   file_version: $(appveyor_build_version)
   informational_version: $(appveyor_build_version)
+init:
+- ps: '& "scripts\AppVeyor\init.ps1"'
+install:
+- ps: '& "scripts\AppVeyor\install.ps1"'
+before_build:
+- ps: '& "scripts\AppVeyor\before_build.ps1"'
 build_script:
-- ps: dotnet build .\NipValidator.sln -c Release
+- ps: '& "scripts\AppVeyor\build.ps1"'
+after_build:
+- ps: '& "scripts\AppVeyor\after_build.ps1"'
 test_script:
-- ps: dotnet test .\tests\NipValidatorTests\NipValidatorTests.csproj --logger:trx
+- ps: '& "scripts\AppVeyor\test.ps1"'
+after_test:
+- ps: '& "scripts\AppVeyor\after_test.ps1"'
 artifacts:
 - path: .\src\NipValidator\bin\Release\Rychusoft.Validators.NipValidator.*.nupkg
   name: NipValidator_nuget_package

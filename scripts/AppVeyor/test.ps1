@@ -1,0 +1,1 @@
+dotnet test .\tests\NipValidatorTests\NipValidatorTests.csproj --logger:trx
