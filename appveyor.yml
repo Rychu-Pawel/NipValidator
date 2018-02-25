@@ -10,6 +10,7 @@ dotnet_csproj:
   file_version: $(appveyor_build_version)
   informational_version: $(appveyor_build_version)
 init:
+- ps: set-ExecutionPolicy Unrestricted
 - ps: Write-Host $env:APPVEYOR_BUILD_FOLDER"\scipts\AppVeyor\init.ps1"
 - ps: Write-Host "$($env:APPVEYOR_BUILD_FOLDER)\scipts\AppVeyor\init.ps1"
 - ps: '& $env:APPVEYOR_BUILD_FOLDER"\scipts\AppVeyor\init.ps1"'
