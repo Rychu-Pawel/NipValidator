@@ -15,10 +15,10 @@ dotnet_csproj:
   file_version: $(appveyor_build_version)
   informational_version: $(appveyor_build_version)
 init:
-- ps: New-Item .\reports -ItemType directory 
 - ps: choco install msbuild-sonarqube-runner -y
 - ps: choco install opencover -y
 install:
+- ps: New-Item .\reports -ItemType directory 
 - ps: dotnet add package xunit.runner.utility 
 - ps: dotnet restore .\NipValidator.sln
 before_build:
