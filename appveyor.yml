@@ -19,7 +19,7 @@ init:
 - ps: choco install opencover -y
 install:
 - ps: New-Item .\reports -ItemType directory 
-- ps: dotnet add package xunit.runner.utility 
+- ps: dotnet add .\tests\NipValidatorTests\NipValidatorTests.csproj package xunit.runner.utility 
 - ps: dotnet restore .\NipValidator.sln
 before_build:
 - ps: >- 
