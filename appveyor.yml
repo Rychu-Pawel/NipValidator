@@ -54,7 +54,7 @@ deploy:
     secure: zC91fFY1joZMkDXOAgrK/3jppgEntX9lWV8wtQr1Da8hENFmY9emqRqgaBLyGlg3
   artifact: NipValidator_nuget_package
   on:
-    branch: master
+    branch: doNotDeployForNow
 notifications:
 - provider: GitHubPullRequest
   on_build_success: true
