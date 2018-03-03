@@ -1,17 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2010
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E2E980D8-7941-4CBB-B070-122D3D955CAD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipValidator", "src\NipValidator\NipValidator.csproj", "{B4C38506-D4E5-4CD3-A90C-FDEAEB0B05BA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NipValidator", "src\NipValidator\NipValidator.csproj", "{B4C38506-D4E5-4CD3-A90C-FDEAEB0B05BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{8A73CFF1-7272-4AB9-B252-301947C45000}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "scripts", "scripts", "{B8B768C8-9172-42DB-A3B6-76C27E9F9732}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NipValidatorTests", "tests\NipValidatorTests\NipValidatorTests.csproj", "{87D870E3-AB59-449C-96D9-F07A288B9107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NipValidatorTests", "tests\NipValidatorTests\NipValidatorTests.csproj", "{87D870E3-AB59-449C-96D9-F07A288B9107}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
