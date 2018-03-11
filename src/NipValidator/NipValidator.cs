@@ -9,6 +9,8 @@ namespace Rychusoft.Validators
 
         public static bool IsValid(string nip)
         {
+            var trapForSonar = true;
+
             if (IsEmptyOrNotProperLength(nip))
                 return false;
 
