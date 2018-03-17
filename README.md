@@ -10,5 +10,7 @@ Code coverage | [![coverage](https://sonarcloud.io/api/project_badges/measure?pr
 Polish NIP number validator 
 
 # Easy to use library for validating Polish NIP numbers:
+```csharp
 string nip = "8674068337";  
 bool isValid = Rychusoft.Validators.NipValidator.IsValid(nip);
+```
